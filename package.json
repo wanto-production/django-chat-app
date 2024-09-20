@@ -1,0 +1,20 @@
+{
+  "name": "djapp",
+  "version": "1.0.0",
+  "main": "manage.py",
+  "scripts": {
+    "tailb": "python manage.py tailwind build",
+    "tails": "python manage.py tailwind start",
+    "start": "python manage.py runserver",
+    "dev": "python manage.py runserver"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.12"
+  }
+}

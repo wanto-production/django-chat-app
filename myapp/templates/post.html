@@ -1,0 +1,28 @@
+{% extends 'template.html' %}
+
+{% block title %} post {% endblock %}
+
+{% block content %}
+<div class=" w-full h-screen flex justify-center items-center flex-col gap-2">
+    <a class=" text-white bg-green-800 p-3 duration-300 hover:rounded-md" href="{% url 'create_post' %}">create post</a>
+    <h1>post:</h1>
+    <div class=" h-[400px] max-h-[400px] w-4/5 border-t-4 border-green-800 flex flex-col items-center rounded-md overflow-y-scroll pt-10 gap-20 overflow-x-hidden">
+        {% for posts in post %}
+            <div class=" w-[90%] h-fit p-2 border-2 border-gray-800 {% if user == posts.author %} rounded-s-md rounded-b-md border-red-950{% else %} rounded-e-md rounded-es-md{% endif %} ">
+                <small>create by {{ posts.author }}</small>
+                <h1 class=" text-3xl font-bold">{{ posts.title }}</h1>
+                <p>{{ posts.content }}</p>
+                <small>create at {{ posts.created_at }}  
+                    {% if user == posts.author %}
+                    action:
+                        <a class="bg-red-500 text-white p-2 rounded-sm" href="{% url 'delete_post' posts.content %}">Delete</a>
+                        <a class=" border-2 border-yellow-500 border-solid p-[6px] text-yellow-500 rounded-sm ml-2" href="{% url 'update_post' posts.content %}">Edit</a>
+                    {% endif %}
+                </small>
+            </div>
+        {% empty %}
+            <h1 class=" list-none justify-self-center">No posts available.</h1>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

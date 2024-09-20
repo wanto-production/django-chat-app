@@ -1,0 +1,27 @@
+# Python
+*.pyc
+__pycache__/
+
+# Django
+*.sqlite3
+*.log
+*.pot
+*.pyc
+*.pyo
+*.db
+*.sqlite3
+media
+staticfiles
+
+# Virtual Environment
+env/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Ignore sensitive files
+.env
+
+node_modules/
