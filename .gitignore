@@ -11,17 +11,10 @@ __pycache__/
 *.db
 *.sqlite3
 media
-staticfiles
-
-# Virtual Environment
-env/
-venv/
+staticfiles/
 
 # IDE
 .vscode/
 .idea/
-
-# Ignore sensitive files
-.env
 
 node_modules/
